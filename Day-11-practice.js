@@ -45,7 +45,15 @@ function chkStr(str) {
     return -1 // returning -1 if none of the characters have frequency of 1
 }
 
-console.log(chkStr('relevel'));
-console.log(chkStr('master'));
-console.log(chkStr('leel'));
-console.log(chkStr('level'));
+// Test case
+// console.log(chkStr('relevel'));
+// console.log(chkStr('master'));
+// console.log(chkStr('leel'));
+// console.log(chkStr('level'));
+
+
+// Output
+// r
+// m
+// -1
+// v
