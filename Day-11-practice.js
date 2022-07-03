@@ -57,3 +57,30 @@ function chkStr(str) {
 // m
 // -1
 // v
+
+
+var containsDuplicate = function(nums) {
+    
+    let hashMap = {} // empty object for hashmap
+    
+    //iterating through arrays to check and make entries in hashmap
+    for (let i = 0; i < nums.length; i++) {
+       if (!hashMap[nums[i]]) {
+           hashMap[nums[i]] = 1
+       } else {
+           hashMap[nums[i]] += 1
+       }
+    }
+    // checking for the values that appears more than once in the array
+    for (let j = 0; j < nums.length; j++) {
+       if (hashMap[nums[j]] > 1) {
+           return true
+       }
+    }
+    return false
+};
+
+// test case
+// console.log(containsDuplicate([1, 2, 3, 1])); 
+// console.log(containsDuplicate([1, 2, 3, 4])); 
+// console.log(containsDuplicate([1, 1, 1, 2, 2, 2, 3, 3, 3])); 

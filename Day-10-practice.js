@@ -1,40 +1,40 @@
-function anagram(str1, str2) {
-    str1 = str1.split('').sort().join('')
-    str2 = str2.split('').sort().join('')
-    return str1 === str2
+function anagram(s, t) {
+    s = s.split('').sort().join('')
+    t = t.split('').sort().join('')
+    return s === t
 }
 
 // console.log(anagram('race', 'care'));
 
-function checkAnagramOptimised(str1, str2) {
+function checkAnagramOptimised(s, t) {
     /**
      * Time: O(n)
      */
     // check if the length is not equal
-    if(str1.length != str2.length) {
+    if(s.length != t.length) {
         return false;
     }
 
-    // prepare frequency map of str1
+    // prepare frequency map of s
     let mp = {}; // inside this object we will store key value pairs - KNEE
-    for(let i = 0; i < str1.length; i++) { // O(n)
-        if(!mp[str1[i]]) {
+    for(let i = 0; i < s.length; i++) { // O(n)
+        if(!mp[s[i]]) {
             // if the current character is not present in the map, make entry with inital frequency 1
-            mp[str1[i]] = 1;
+            mp[s[i]] = 1;
         } else {
             // the character is already present in the map
-            mp[str1[i]] += 1;
+            mp[s[i]] += 1;
         }
     }
-    // checking str2 in the map
-    for(let i = 0; i < str2.length; i++) { // O(n)
-        if(!mp[str2[i]]) {
+    // checking t in the map
+    for(let i = 0; i < t.length; i++) { // O(n)
+        if(!mp[t[i]]) {
             // this is an extra unwanted character, as it is not present in my map
             // console.log("not an angram", mp);
             return false;
         } else {
-            mp[str2[i]] -= 1; // now as we have found the character, we reduce the frequency
-            if(mp[str2[i]] == 0) delete mp[str2[i]];
+            mp[t[i]] -= 1; // now as we have found the character, we reduce the frequency
+            if(mp[t[i]] == 0) delete mp[t[i]];
         }
     }
     // console.log(mp);
