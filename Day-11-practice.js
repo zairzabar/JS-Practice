@@ -84,3 +84,16 @@ var containsDuplicate = function(nums) {
 // console.log(containsDuplicate([1, 2, 3, 1])); 
 // console.log(containsDuplicate([1, 2, 3, 4])); 
 // console.log(containsDuplicate([1, 1, 1, 2, 2, 2, 3, 3, 3])); 
+
+
+function recursionNum(n) {
+    if (n === 1) {
+        console.log(1);
+        return
+    }
+    console.log(n);
+    recursionNum(n - 1)
+    console.log(n);
+}
+
+recursionNum(5)
