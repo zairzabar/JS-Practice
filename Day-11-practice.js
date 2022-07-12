@@ -96,5 +96,5 @@ function recursionNum(n) {
     console.log(n);
 }
 
-recursionNum(5)
+// recursionNum(5)
 
