@@ -107,3 +107,24 @@ var isPalindrome = function(s) {
 Runtime: 79 ms, faster than 89.76% of JavaScript online submissions for Valid Palindrome.
 Memory Usage: 46.9 MB, less than 35.01% of JavaScript online submissions for Valid Palindrome.
 */
+
+var containsDuplicate = function(nums) {
+    let hm = {};
+    for (let i = 0; i < nums.length; i++) {
+        if (!hm[nums[i]]) {
+            hm[nums[i]] = 1
+        } else {
+            hm[nums[i]] += 1
+        }
+    }
+
+    for (let j = 0; j < nums.length; j++) {
+        if (hm[nums[j]] > 1) {
+            return true
+        }
+        return false
+    }
+};
+
+console.log(containsDuplicate([1, 2, 3, 4, 1]));
+console.log(containsDuplicate([2,14,18,22,22]));
