@@ -32,4 +32,5 @@ function findSum(arr, n) {
     return -1
 }
 
-console.log(findSum([1, 2, 3, 4, 5, 6], 11));
+// console.log(findSum([1, 2, 3, 4, 5, 6], 11));
+
