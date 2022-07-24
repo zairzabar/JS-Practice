@@ -29,7 +29,7 @@ var search = function(nums, target) {
         if (nums[mid] == target) return mid // checking if mid is the target digit
 
         // checking if left is sorted or not
-        if (nums[lo] < nums[mid]) {
+        if (nums[lo] <= nums[mid]) {
             if (nums[lo] <= target && target <= nums[mid]) {
                 hi = mid - 1
             } else {
@@ -46,4 +46,4 @@ var search = function(nums, target) {
     return -1
 };
 
-console.log(search([4,5,6,7,0,1,2], 9));
+// console.log(search([4,5,6,7,0,1,2], 9));
