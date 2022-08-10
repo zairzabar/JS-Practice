@@ -38,5 +38,16 @@ class ComplexNumbers {
 let c1 = new ComplexNumbers(5, 3)
 let c2 = new ComplexNumbers(4, 5)
 
-c1.add(c2)
-c1.display()
+// c1.add(c2)
+// c1.display()
+
+function product(n, p) {
+    console.log(`Beginning of the function`, this)
+    this.name = n;
+    this.price = p;
+    console.log(`End of the function`, this);
+    return 100
+}
+
+const ip = new product('a', 10)
+console.log(ip);
