@@ -12,7 +12,7 @@ class LinkedList {
     
     addAtHead(data) {
         let newNode = new Node(data)
-        newNode.head = this.head;
+        newNode.next = this.head;
         this.head = newNode
     }
     
