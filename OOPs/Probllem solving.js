@@ -1,3 +1,7 @@
+/* Sorted linked list [1, 2, 2, 3, 3, 3, 4]
+Remove duplicates => [1, 2, 3, 4]
+*/
+
 
 // Create a new node using the class Node
 class Node {
@@ -127,10 +131,30 @@ class LinkedList {
 	}
 }
 
-let ll = new LinkedList();
-ll.addAtHead(5);
-ll.addAtHead(4);
-ll.addAtHead(3);
-ll.addAtHead(2);
-ll.addAtHead(1);
-ll.display();
+function removeDuplicates() {
+    let temp = head
+    while (temp != null && temp.next != null) {
+        let nextNode = temp.next
+        while (nextNode != null && temp.data === nextNode.data) {
+            temp.next = nextNode.next
+            nextNode.next = null;
+            nextNode = temp.next
+        }
+        if (temp == null) break 
+        temp = temp.next
+    }
+    return head
+}
+
+/*
+Problem 3: Middle  of the linked list
+*/
+
+function middleNode(head) {
+    let slow = head, fast = head;
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next
+    }
+    return slow
+}

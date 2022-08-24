@@ -1,5 +1,3 @@
-
-// Create a new node using the class Node
 class Node {
 	constructor(d) {
 		this.data = d; // data parameter represents the actual data stored in node
@@ -7,13 +5,13 @@ class Node {
 	}
 }
 
-// Logic for linked list
-// Linking the nodes from head to tail
 class LinkedList {
 	// singly
 	constructor() {
-		// when we initialise a new linked list head will be empty because there is no node at this point
+		// when we initialise a new linked list head will be empty
 		this.head = null;
+		this.start = null; // temporary variable for problem solving
+		this.flag = null; // temporary variable for problem solving
 	}
 
 	addAtHead(data) {
@@ -21,8 +19,8 @@ class LinkedList {
          * Time: O(1)
          * Space: O(1)
          */
-		let newNode = new Node(data); // created a new node by calling the Node class mentioned previously
-		newNode.next = this.head; // pointing to the current head since we are adding the new node at head
+		let newNode = new Node(data); // created a new node
+		newNode.next = this.head; // set the next of new node to head
 		this.head = newNode; // update the head to the new node
 	}
 
@@ -31,7 +29,7 @@ class LinkedList {
          * Time: O(1)
          * Space: O(1)
          */
-		if(this.head == null) return; // no node to remove so returning
+		if(this.head == null) return;
 		let temp = this.head.next; // stored access to new head
 		this.head.next = null; // de linked the old head
 		this.head = temp; // updated the head
@@ -114,23 +112,38 @@ class LinkedList {
 		nodeToBeDeleted.next = null;
 	}
 
-	display() {
-        /**
-         * Time: O(n)
-         * Apace: O(1)
-         */
-		let temp = this.head;
-		while(temp != null) {
-			console.log(temp.data);
-			temp = temp.next;
-		}
-	}
+	getHead() {
+        if (this.head == null) return undefined;
+        return this.head.data
+    }
+
 }
 
-let ll = new LinkedList();
-ll.addAtHead(5);
-ll.addAtHead(4);
-ll.addAtHead(3);
-ll.addAtHead(2);
-ll.addAtHead(1);
-ll.display();
+class Queue {
+    constructor() {
+        this.ll = new LinkedList()
+    }
+
+    enqueue(x) {
+        this.ll.addAtTail(x)
+    }
+
+    dequeue() {
+        this.ll.removeAtHead()
+    }
+
+    getFront() {
+        return this.ll.getHead()
+    }
+}
+
+let qu = new Queue();
+qu.enqueue(10)
+qu.enqueue(20)
+qu.enqueue(30)
+qu.enqueue(40)
+qu.dequeue()
+qu.dequeue()
+qu.dequeue()
+console.log(qu.getFront())
+console.log(this.ll)
