@@ -103,5 +103,5 @@ bst.insert(3)
 bst.insert(7)
 
 bst.preorder()
-// console.log('***');
-// bst.inorder()
+console.log('***');
+bst.inorder()
