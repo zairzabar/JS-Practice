@@ -31,6 +31,15 @@ class Hashmap {
     }
 
     insert(k, v) { // basically addAtHead function of linked list
+        if (this.search(k)) {
+            let bucketIndex = this.hash(k);
+            let temp = this.arr[bucketIndex];
+            while (temp != null && temp.key != k) {
+                temp = temp.next
+            }
+            temp.value = v
+            return
+        }
         let bucketIndex = this.hash(k); // index of the array where we need to add the linked list (node or the hashed value)
         let newNode = new Node(k, v);
         newNode.next = this.arr[bucketIndex]
@@ -69,6 +78,7 @@ class Hashmap {
         let temp = this.arr[bucketIndex]
         while (temp != null) {
             if (temp,key == key) return temp.value
+            temp = temp.next
         }
         return undefined
     }
@@ -83,3 +93,6 @@ hm.insert('Sanket', 1)
 hm.insert('Sandeep', 2)
 hm.insert('Sameer', 3)
 hm.insert('Varun', 4)
+hm.insert('Sameer', 7)
+
+console.log(hm.search('Sameer'))
