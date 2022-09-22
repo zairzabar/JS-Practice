@@ -32,3 +32,32 @@ function binarySearch(arr, x) {
 
 console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], ))
 
+// concat array
+
+var getConcatenation = function(nums) {
+    let ans = nums;
+    return ans.concat(nums)
+};
+
+//running sum of array
+var runningSum = function(nums) {
+    let sum = 0
+    for (let i = 0; i < nums.length; i++) {
+        sum = sum + nums[i]
+        nums[i] = sum
+    }
+    return nums
+};
+
+// Find value after operations
+var finalValueAfterOperations = function(operations) {
+    let X = 0
+    for (let i = 0; i < operations.length; i++) {
+        if (operations[i].includes('+')) {
+            X += 1
+        } else {
+            X -= 1
+        }
+    }
+    return X
+};
