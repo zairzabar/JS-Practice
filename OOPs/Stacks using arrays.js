@@ -22,6 +22,5 @@ st.push(10)
 st.push(20)
 st.push(30)
 
-console.log(st.top())
 st.pop()
-
+console.log(st.top());
